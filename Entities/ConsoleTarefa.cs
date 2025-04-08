@@ -2,7 +2,7 @@
 
 public class ConsoleTarefa
 {
-    public static int ShowOptions()
+    public static string ShowOptions()
     {
         Console.WriteLine("--------------------------------------------------------------------------------");
         Console.WriteLine("                             Gerenciador de Tarefas                             ");
@@ -15,9 +15,14 @@ public class ConsoleTarefa
         Console.WriteLine("5 - Exibir relatório");
         Console.WriteLine("0 - Encerrar");
         Console.Write("-> ");
-        int opt = int.Parse(Console.ReadLine()!);
+        var opt = Console.ReadLine();
 
         Console.WriteLine();
+
+        if (opt == null)
+        {
+            return "-1";
+        }
 
         return opt;
     }
