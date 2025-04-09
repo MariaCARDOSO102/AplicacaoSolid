@@ -2,9 +2,7 @@
 
 namespace AplicacaoSolid.Interfaces;
 
-public interface IGerenciadorTarefas
+public interface IGerenciadorTarefas : IGerenciador<Tarefa>
 {
-    public void CriarTarefa(Tarefa tarefa);
-    public List<Tarefa> ListarTarefas();
     public List<Tarefa> FiltrarPrioridade(int prioridade);
 }

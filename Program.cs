@@ -1,14 +1,12 @@
 ﻿using AplicacaoSolid.Entities;
 using AplicacaoSolid.Interfaces;
 
-// TODO Terminar as operações
-
 IGerenciadorTarefas gerenciadorTarefas = new GerenciadorTarefas();
 
 while (true)
 {
     string opt = ConsoleTarefa.ShowOptions();
-    List<Tarefa> tarefas = gerenciadorTarefas.ListarTarefas();
+    List<Tarefa> tarefas = gerenciadorTarefas.Listar();
     var tarefaPrinter = new TarefaPrinter();
 
     switch (opt)
@@ -20,7 +18,7 @@ while (true)
             Console.Write("Prioridade (1-5): ");
             int prioridade = int.Parse(Console.ReadLine()!);
 
-            gerenciadorTarefas.CriarTarefa(new Tarefa(titulo, prioridade));
+            gerenciadorTarefas.Criar(new Tarefa(titulo, prioridade));
             break;
 
         case "2":
@@ -46,7 +44,7 @@ while (true)
 
 
         case "5":
-            var relatorio = new Relatorio(gerenciadorTarefas);
+            var relatorio = new RelatorioTarefa(gerenciadorTarefas);
             relatorio.Print();
             break;
 

@@ -2,11 +2,11 @@
 
 namespace AplicacaoSolid.Entities;
 
-public class Relatorio : IPrintavel
+public class RelatorioTarefa : IPrintavel
 {
     private readonly IGerenciadorTarefas _gerenciadorTarefas;
 
-    public Relatorio(IGerenciadorTarefas gerenciadorTarefas)
+    public RelatorioTarefa(IGerenciadorTarefas gerenciadorTarefas)
     {
         _gerenciadorTarefas = gerenciadorTarefas;
     }
@@ -22,7 +22,7 @@ public class Relatorio : IPrintavel
         Console.WriteLine("---------------------------------------");
         Console.WriteLine("");
 
-        List<Tarefa> tarefas = _gerenciadorTarefas.ListarTarefas();
+        List<Tarefa> tarefas = _gerenciadorTarefas.Listar();
         int total = tarefas.Count;
         int concluidas = CalcularConcluidas(tarefas);
 

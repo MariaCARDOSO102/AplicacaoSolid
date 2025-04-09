@@ -5,14 +5,14 @@ namespace AplicacaoSolid.Entities;
 
 public class GerenciadorTarefas : IGerenciadorTarefas
 {
-    private readonly List<Tarefa> Tarefas = new List<Tarefa>();
+    private readonly List<Tarefa> Tarefas = [];
 
-    public void CriarTarefa(Tarefa tarefa)
+    public void Criar(Tarefa tarefa)
     {
         Tarefas.Add(tarefa);
     }
 
-    public List<Tarefa> ListarTarefas()
+    public List<Tarefa> Listar()
     {
         return Tarefas;
     }
