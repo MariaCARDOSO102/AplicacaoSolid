@@ -28,7 +28,12 @@ while (true)
             break;
 
         case "3":
+            tarefaPrinter.Print(tarefas);
 
+            Console.Write($"Selecione a tarefa a ser marcada (1 a {tarefas.Count}): ");
+            int index = int.Parse(Console.ReadLine()!);
+
+            tarefas[index-1].MarcarConcluida();
             break;
 
         case "4":
