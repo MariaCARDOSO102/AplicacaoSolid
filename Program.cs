@@ -2,7 +2,6 @@
 using AplicacaoSolid.Interfaces;
 
 // TODO Terminar as operações
-// TODO Criar classe Printer
 
 IGerenciadorTarefas gerenciadorTarefas = new GerenciadorTarefas();
 
@@ -10,7 +9,7 @@ while (true)
 {
     string opt = ConsoleTarefa.ShowOptions();
     List<Tarefa> tarefas = gerenciadorTarefas.ListarTarefas();
-
+    var tarefaPrinter = new TarefaPrinter();
 
     switch (opt)
     {
@@ -25,14 +24,19 @@ while (true)
             break;
 
         case "2":
-            foreach (Tarefa ta in tarefas)
-            {
-                ta.Print();
-            }
-            return;
+            tarefaPrinter.Print(tarefas);
+            break;
+
+        case "3":
+
+            break;
 
         case "4":
+            Console.Write("Digite a prioridade (1-5): ");
+            int prio = int.Parse(Console.ReadLine()!);
 
+            var tarefasFiltradas = gerenciadorTarefas.FiltrarPrioridade(prio);
+            tarefaPrinter.Print(tarefasFiltradas);
             break;
 
 

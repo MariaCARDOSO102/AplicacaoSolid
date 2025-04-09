@@ -1,8 +1,6 @@
-﻿using AplicacaoSolid.Entities;
+﻿namespace AplicacaoSolid.Interfaces;
 
-namespace AplicacaoSolid.Interfaces;
-
-public interface IPrinter
+public interface IPrinter<T>
 {
-    public void PrintTask(List<Tarefa> tarefas);
+    public void Print(List<T> values);
 }
